@@ -1,0 +1,29 @@
+services:
+  ros2_v1:
+    image: ros2-curso:v2
+    container_name: ros2_curso_sesion
+    stdin_open: true
+    tty: true
+    working_dir: /workspace
+    environment:
+      - PYTHONPATH=/workspace_repo
+    volumes:
+      - ${HOME}/ros2_curso:/workspace
+      - ./:/workspace_repo
+    command: bash
+
+  ros2_v2:
+    image: ros2-curso:v2
+    container_name: ros2_sim
+    stdin_open: true
+    tty: true
+    working_dir: /workspace
+    environment:
+      - DISPLAY=${DISPLAY:-:0}
+      - TURTLEBOT3_MODEL=burger
+      - PYTHONPATH=/workspace_repo
+    volumes:
+      - ${HOME}/ros2_curso:/workspace
+      - ./:/workspace_repo
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    command: bash

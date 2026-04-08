@@ -1,0 +1,8 @@
+numpy>=1.24
+matplotlib>=3.7
+scipy>=1.11
+scikit-fuzzy>=0.4.2
+pybullet>=3.2
+anthropic>=0.39.0
+ollama>=0.4.0
+torch>=2.1

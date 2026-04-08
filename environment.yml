@@ -1,0 +1,17 @@
+name: robots-expertos-mia
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.11
+  - pip
+  - numpy
+  - matplotlib
+  - scipy
+  - pytorch
+  - cpuonly
+  - pip:
+      - scikit-fuzzy
+      - pybullet
+      - anthropic
+      - ollama

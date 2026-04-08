@@ -1,0 +1,16 @@
+FROM ros:humble
+
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    python3-pip \
+    python3-numpy \
+    python3-matplotlib \
+    ros-humble-demo-nodes-py \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip3 install --no-cache-dir \
+    pybullet \
+    scikit-fuzzy
+
+WORKDIR /workspace
+RUN echo "source /opt/ros/humble/setup.bash" >> /root/.bashrc
+CMD ["bash"]
