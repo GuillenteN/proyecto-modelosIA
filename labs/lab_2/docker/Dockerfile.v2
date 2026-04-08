@@ -1,9 +1,0 @@
-FROM ros2-curso:v1
-
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
-    ros-humble-gazebo-ros-pkgs \
-    ros-humble-turtlebot3-gazebo \
-    ros-humble-turtlebot3-bringup \
-    && rm -rf /var/lib/apt/lists/*
-
-ENV TURTLEBOT3_MODEL=burger
